@@ -1,0 +1,61 @@
+.home_banner{
+    padding: 20px 40px;
+    /* height: 100vh; */
+}
+.banner_img{
+    height: 100vh;
+    /* padding: 1rem; */
+    background-color: #fff; 
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+    position: relative; 
+}
+.inside_bnr{
+    background-image: url('../Assets/BBVA-Img-Landing-Hazte-cliente-Consumo.im1697750740768im.avif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50%;
+    width: 40%;
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.bng_img{
+    background-image: url('../Assets/How-to-set-up-a-WhatsApp-Business-2048x1152.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 85%;
+}
+.text_clamp{
+    font-size: clamp(2rem, 10vw, 3rem);
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-80%,-90%);
+    z-index: 3;
+    backdrop-filter: blur(0.7px);
+    padding: 1rem;
+    color:#6038ef;
+    background-color: #fff;
+    opacity: 0.6;
+}
+@media (max-width:1080px){
+.home_banner{
+    padding: 10px 20px;
+} 
+.text_clamp{
+    transform: translate(-60%,-50%);
+
+}
+}
