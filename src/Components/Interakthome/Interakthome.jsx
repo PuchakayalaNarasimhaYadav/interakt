@@ -22,7 +22,7 @@ export default function Interakthome(){
                 style={{
                     backgroundColor: "#dafff2",
                     color: "#00a98a",
-                    textTransform: "lowercase",
+                    textTransform:'capitalize',
                 }}
                 >
                 Official WhatsApp Business Platform
@@ -40,8 +40,8 @@ export default function Interakthome(){
                     <p>customer experience & grow your business on WhatsApp</p>
                 </div>
                 <Stack direction='row' spacing={2}>
-                    <Button variant="contained" style={{backgroundColor:'#fab534'}} onClick={()=>navigate('/landingpage')}>Start Free Trail</Button>
-                    <Button variant="contained" style={{backgroundColor:'black'}}>Sign-up using Shopify</Button>
+                    <Button variant="contained" style={{backgroundColor:'#fab534',textTransform:'capitalize'}} onClick={()=>navigate('/landingpage')}>Start Free Trail</Button>
+                    <Button variant="contained" style={{backgroundColor:'black',textTransform:'capitalize'}}>Sign-up using Shopify</Button>
                 </Stack>
             </div>
             <div className={homeStyle.right_img}>

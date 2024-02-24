@@ -141,4 +141,14 @@
         flex-direction: column;
     }
     
+    .card_reason{
+        padding: 0.5rem;
+    }
+    .cards_reason_content{
+        padding: 0.5rem;
+        flex-direction: column;
+    }
+    .features_web_content{
+        padding: 0.2rem;
+    }
 }
