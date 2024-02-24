@@ -69,7 +69,7 @@ export default function Interakthome(){
                         ))
                     }
                 </div>
-                <div className={homeStyle.images} data-aos='fade-left'>
+                <div className={homeStyle.images} data-aos='zoom-in'>
                 </div>
             </div> 
         </div>
