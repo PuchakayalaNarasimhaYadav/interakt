@@ -1,8 +1,61 @@
 import React, { useState } from "react";
 import LandingStyle from "./Interaktlanding.module.css";
 import { Button,} from "@mui/material";
-
 export default function Interaktlanding() {
+  const [firstname,setFirstname] = useState("");
+  const [lastname,setLastname] =useState("");
+  const [number,setNumber] = useState("");
+  const [email,setEmail] = useState("");
+  const [formError ,setFormError]=useState({
+    firstname:'',
+    lastname:'',
+    number:'',
+    email:''
+  })
+  function FirstNamehandler(){
+    let IsFirstName = firstname && firstname.trim();
+    let FirstnameError ="";
+    if(!IsFirstName){
+        FirstnameError='*enter your firstname'
+    }
+    setFormError((prev)=>{
+      prev.firstname = FirstnameError;
+      return Object.assign({},prev)
+    })
+  }
+  function LastNamehandler(){
+    let IsLastname =lastname && lastname.trim();
+    let LastnameError ='';
+    if(!IsLastname){
+      LastnameError="*enter your lastname"
+    }
+    setFormError((prev)=>{
+      prev.lastname=LastnameError;
+      return Object.assign({},prev)
+    })
+  }
+  function Numberhandler(){
+    let IsNumber = number && number.trim();
+    let NumberError ='';
+    if(!IsNumber){
+      NumberError='*enter your number';
+    }
+    setFormError((prev)=>{
+      prev.number=NumberError;
+      return Object.assign({},prev)
+    })
+  }
+  function Emailhandler(){
+    let IsEmail = email && email.trim();
+    let EmailError ='';
+    if(!IsEmail){
+      EmailError='*enter your valid email address'
+    }
+    setFormError((prev)=>{
+      prev.email=EmailError;
+      return Object.assign({},prev)
+    })
+  }
   const[ formdata ,setFormdata]=useState({
     firstname:'',
     lastname:'',
@@ -11,12 +64,39 @@ export default function Interaktlanding() {
   })
   const handleChange=(e)=>{
     setFormdata({...formdata,[e.target.name]:e.target.value})
+    setFirstname(e.target.value);
+    setLastname(e.target.value);
+    setNumber(e.target.value);
+    setEmail(e.target.value);
+    FirstNamehandler();
+    LastNamehandler();
+    Numberhandler();
+    Emailhandler();
   }
   
   function Formhandler(event){
     event.preventDefault()
-
-    sendDataToServer(formdata)
+    if(!firstname || !lastname || !number || !email){
+      alert("please fill the form")
+      return;
+    }
+    sendDataToServer(formdata);
+    setFormdata({
+      firstname: '',
+      lastname: '',
+      number: '',
+      email: ''
+    });
+    setFormError({
+      firstname: '',
+      lastname: '',
+      number: '',
+      email: ''
+    });
+    FirstNamehandler();
+    LastNamehandler();
+    Numberhandler();
+    Emailhandler();
   }
   const sendDataToServer = async (formData) => {
     try {
@@ -24,7 +104,6 @@ export default function Interaktlanding() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          
         },
         body: JSON.stringify(formData),
       });
@@ -38,8 +117,8 @@ export default function Interaktlanding() {
     } catch (error) {
       console.error('Error:', error);
     }
-  };
 
+  };
   return (
     <div className={LandingStyle.landing_web}>
         <div className={LandingStyle.form_web_data} data-aos='zoom-in'>
@@ -54,15 +133,38 @@ export default function Interaktlanding() {
                 <div>
                   <input type='text' placeholder="firstname" name="firstname" value={formdata.firstname} onChange={handleChange} />
                 </div>
+                {
+                  formError.firstname && <div>
+                        <small>{formError.firstname}</small>
+                    </div>
+                }
+
                 <div>
                 <input type='text' placeholder="lastname" name="lastname" value={formdata.lastname} onChange={handleChange} />
                 </div>
-                <div>
-                <input type='text' placeholder="number" name="number" value={formdata.number} onChange={handleChange} />
+                {
+                  formError.lastname &&<div>
+                  <small>{formError.lastname}</small>
                 </div>
+                }
+                
                 <div>
-                <input type='text' placeholder="work email" name='email' vlaue={formdata.email} onChange={handleChange} />
+                <input type='number' placeholder="number"  name="number" value={formdata.number} onChange={handleChange} />
                 </div>
+                {
+                  formError.number &&
+                  <div>
+                  <small>{formError.number}</small>
+                </div>
+                }
+                <div>
+                <input type='text' placeholder="work email" name='email' value={formdata.email} onChange={handleChange} />
+                </div>
+                  {
+                    formError.email &&<div>
+                                    <small>{formError.email}</small>
+                                    </div>
+                  }
                 <div>
                   <Button variant="contained" type="submit" style={{textTransform:'capitalize'}}>Try Interakt for free</Button>
                 </div>

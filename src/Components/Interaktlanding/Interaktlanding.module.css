@@ -50,6 +50,9 @@ form{
     width: 100%;
     padding: 10px;
 }
+small{
+    color: red;
+}
 @media (max-width:1080px){
     .landing_web{
         padding: 10px 20px;

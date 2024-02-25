@@ -3,10 +3,9 @@ import homeStyle from './Interakthome.module.css'
 import { Button, Stack } from "@mui/material";
 import { FaWhatsapp } from "react-icons/fa";
 import {Cardsdata,ReasonCards} from "../Interakthome/Interaktdata";
-import { useNavigate } from "react-router-dom";
 import AOS from 'aos'
+import { Link } from "react-router-dom";
 export default function Interakthome(){
-    const navigate = useNavigate()
     useEffect(()=>{
         AOS.init({
             duration:800,
@@ -40,8 +39,7 @@ export default function Interakthome(){
                     <p>customer experience & grow your business on WhatsApp</p>
                 </div>
                 <Stack direction='row' spacing={2}>
-                    <Button variant="contained" style={{backgroundColor:'#fab534',textTransform:'capitalize'}} onClick={()=>navigate('/landingpage')}>Start Free Trail</Button>
-                    <Button variant="contained" style={{backgroundColor:'black',textTransform:'capitalize'}}>Sign-up using Shopify</Button>
+                    <Link to='/landingpage'><Button variant="contained" style={{backgroundColor:'#fab534',textTransform:'capitalize'}}>Start Free Trail</Button></Link>
                 </Stack>
             </div>
             <div className={homeStyle.right_img}>
