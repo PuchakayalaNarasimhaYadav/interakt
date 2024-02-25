@@ -6,12 +6,13 @@
 .landing_frontbanner{
     margin: 10px 0px;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 4rem;
     display: flex;
     gap: 10px;
-    height: 70vh;
+    /* height: 70vh; */
     box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.3);
     background-color: #fff;
+    overflow-wrap: anywhere;
 }
 .left_content{
     flex: 1;
@@ -132,7 +133,7 @@
         flex-direction: column;
         font-weight: 600;
         font-size: 90px;
-        height: 100vh;
+        padding: 0.3rem;
     }
     .home_web{
         padding: 10px 20px;
@@ -147,8 +148,17 @@
     .cards_reason_content{
         padding: 0.5rem;
         flex-direction: column;
+        gap: 1.5rem;
     }
     .features_web_content{
         padding: 0.2rem;
     }
+    .right_img{
+        display: none;
+    }
 }
+/* @media (max-width:480px){
+    .landing_frontbanner{
+        height: 50vh;
+    }
+} */

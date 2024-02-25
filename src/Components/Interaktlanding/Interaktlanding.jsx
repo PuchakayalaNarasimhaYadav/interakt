@@ -64,7 +64,7 @@ export default function Interaktlanding() {
                 <input type='text' placeholder="work email" name='email' vlaue={formdata.email} onChange={handleChange} />
                 </div>
                 <div>
-                  <Button variant="contained" type="submit">Try Interakt for free</Button>
+                  <Button variant="contained" type="submit" style={{textTransform:'capitalize'}}>Try Interakt for free</Button>
                 </div>
               </form>
             </div>
