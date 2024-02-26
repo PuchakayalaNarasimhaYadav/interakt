@@ -7,7 +7,6 @@
     font-weight: 600;
     font-size: 30px;
 }
-
 .form_web_data{
     margin: 20px 0px;
     display: flex;
@@ -56,6 +55,7 @@ small{
 @media (max-width:1080px){
     .landing_web{
         padding: 10px 20px;
+        height: 100vh;
     }
     .form_web_data{
         flex-direction: column;

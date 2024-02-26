@@ -77,7 +77,7 @@ export default function Interaktlanding() {
   function Formhandler(event){
     event.preventDefault()
     if(!formdata.firstname || !formdata.lastname || !formdata.number || !formdata.email){
-      alert("please fill the form")
+      alert("please fill the form");
       return;
     }
     sendDataToServer(formdata);
