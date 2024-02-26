@@ -76,7 +76,7 @@ export default function Interaktlanding() {
   
   function Formhandler(event){
     event.preventDefault()
-    if(!firstname || !lastname || !number || !email){
+    if(!formdata.firstname || !formdata.lastname || !formdata.number || !formdata.email){
       alert("please fill the form")
       return;
     }
@@ -158,7 +158,7 @@ export default function Interaktlanding() {
                 </div>
                 }
                 <div>
-                <input type='text' placeholder="work email" name='email' value={formdata.email} onChange={handleChange} />
+                <input type='email' placeholder="work email" name='email' value={formdata.email} onChange={handleChange} />
                 </div>
                   {
                     formError.email &&<div>
